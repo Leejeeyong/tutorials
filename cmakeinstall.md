@@ -1,5 +1,9 @@
 #CMAKE
 
+sudo dnf gcc-c++
+sudo dnf glibc-devel
+sudo dnf gcc
+
 
 sudo dnf install cmake
 
