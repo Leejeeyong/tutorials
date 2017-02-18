@@ -9,6 +9,8 @@
 	$ sudo dnf install cmake
 
 	$ sudo dnf install boost-devel
+	
+	$ sudo yum install zlib.i686 ncurses-libs.i686 bzip2-libs.i686 
 
 ##cmake
 
