@@ -31,6 +31,7 @@
 	$ make install
 
 ##java
+	http://ridz1ba.blogspot.kr/2015/08/how-to-install-oracle-java-and-android_9.html
 
 STEP 1: Install Oracle’s Java SE (or JDK) 8
 	
