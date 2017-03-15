@@ -1,4 +1,4 @@
-#Linux Setting
+# Linux Setting
 
 	gnome tweak tool install
 

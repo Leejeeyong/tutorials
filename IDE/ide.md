@@ -1,4 +1,4 @@
-#android studio
+# android studio
 	downloads android studio
 	https://developer.android.com/studio/index.html
 
@@ -66,7 +66,7 @@
 
 	http://ridz1ba.blogspot.kr/2015/08/how-to-install-oracle-java-and-android_9.html
 
-#pycharm
+# pycharm
 
 	https://www.jetbrains.com/pycharm/download/#section=linux
 
@@ -76,4 +76,4 @@
 
 	$ ./pycharm.sh
 
-#eclipse with kotlin
+# eclipse with kotlin

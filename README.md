@@ -1,19 +1,19 @@
-#compiler
+# compiler
 	-How to install c/c++ compiler
 	-How to install cmake
 	-How to install java
 
-#git
+# git
 	How to set and use github
 
-#IDE
+# IDE
 	-How to install android studio
 	-How to install Pycharm
 
-#library
+# library
 	-How to install dlib
 	-How to install opencv
 	-How to install skimage
 
-#linux
+# linux
 	-My linux setting

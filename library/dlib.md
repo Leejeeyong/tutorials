@@ -1,7 +1,7 @@
-##download dlib directory
+## download dlib directory
 	$ git clone https://github.com/davisking/dlib.git
 
-##compiling DLIB examples program
+## compiling DLIB examples program
 	goto examples diretory
 
 	$ mkdir build
@@ -12,6 +12,6 @@
 	
 	$ cmake --build
 
-##python
+## python
 
 	$ python setup.py insatll

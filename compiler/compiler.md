@@ -1,4 +1,4 @@
-##c/c++ compiler
+## c/c++ compiler
 
 	$ sudo dnf install -y gcc
 	
@@ -12,7 +12,7 @@
 	
 	$ sudo yum install zlib.i686 ncurses-libs.i686 bzip2-libs.i686 
 
-##cmake
+## cmake
 
 	$ sudo dnf install glibc-devel
 	
@@ -30,7 +30,7 @@
 
 	$ make install
 
-##java
+## java
 	http://ridz1ba.blogspot.kr/2015/08/how-to-install-oracle-java-and-android_9.html
 
 STEP 1: Install Oracle’s Java SE (or JDK) 8

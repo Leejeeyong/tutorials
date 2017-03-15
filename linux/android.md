@@ -1,26 +1,26 @@
-#Install needed Dependencies
+# Install needed Dependencies
 
 	sudo yum install zlib-devel.i686 ncurses-devel.i686 ant
 
-#Get the SDK
+# Get the SDK
 
 	mkdir ~/AndroidDevelEnvir/
 
 	http://developer.android.com/sdk/index.html
 
-#Update the SDK
+# Update the SDK
 	cd ~/AndroidDevelEnvir/android-sdk-linux/tools/
 
 	./android
 	
-#Set up your PATH variable to point at the SDK
+# Set up your PATH variable to point at the SDK
 	nano ~/.bash_profile
 
 	export PATH=$PATH:~/AndroidDevelEnvir/android-sdk-linux/tools/
 	export PATH=$PATH:~/AndroidDevelEnvir/android-sdk-linux/platform-tools/
 	
 
-#Create the App
+# Create the App
 	android list targets
 
 	Available Android targets:
@@ -38,7 +38,7 @@
 
 
 
-#Building your Android app
+# Building your Android app
 
 	cd ~/AndroidDevelEnvir/project/MyFirstApp
 
@@ -46,11 +46,11 @@
 
 
 
-#Test out your app on a real device
+# Test out your app on a real device
 
 	adb install bin/Projectname-debug.apk
 
-#Test out your app on the emulator
+# Test out your app on the emulator
 
 	android avd
 
