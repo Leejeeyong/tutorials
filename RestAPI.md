@@ -23,9 +23,149 @@ AndroidManifest.xml 에서 아래를 앱속성을 다루기 전의 부분에 추
 
 
 
+사용하고자 하는 API는
+
+https://tracker.delivery/guide/
+
+위 링크에 있는 것으로
+
+
+
+1. 택배사들 정보
+
+https://apis.tracker.delivery/carriers
+
+2. 배송추적 정보
+
+https://apis.tracker.delivery/carriers/:carrier_id/tracks/:track_id
+
+
+
+# Class추가(+@SerializedName)
+
+가장 먼저 위의 api에서 값들을 불러오기 위한 클래스를 새로 만들어 줍니다.
+
+저는 Data.java를 만들어서 사용 했습니다.
+
+일단 택배사 정보를 가져오기 위해
+
+```java
+public class Carrier{
+    @SerializedName("id") String id;
+    @SerializedName("name") String name;
+    @SerializedName("tel") String tel;
+
+    public String getId() { return id; }
+    public String getName() { return name; }
+    public String getTel() { return tel; }
+}
+
+public Carrier getCarrier(){ return carrier; }
+```
+
+
+
+그리고 배송추적 정보를 가져오기 위한
+
+```java
+/////////////////Carriers List////////////////////////////////
+@SerializedName("id") String id;
+@SerializedName("name") String name;
+@SerializedName("tel") String tel;
+
+public String getId() { return id; }
+public String getName() { return name; }
+public String getTel() { return tel; }
+
+/////////////////Tracker////////////////////////////////
+////////////////////////////////////////////////////////
+@SerializedName("from") From from;
+@SerializedName("to") To to;
+@SerializedName("state") State state;
+@SerializedName("progresses")
+public List<Progress> progress = new ArrayList<>();
+@SerializedName("carrier") Carrier carrier;
+
+//////////////보내는 사람 정보///////////////////////////////////////
+public class From{
+    @SerializedName("name") String name;
+    @SerializedName("time") String time;
+
+    public String getName() { return name; }
+    public String getTime() { return time; }
+}
+//////////////밥는 사람 정보///////////////////////////////////////
+public class To{
+    @SerializedName("name") String name;
+    @SerializedName("time") String time;
+
+    public String getName() { return name; }
+    public String getTime() { return time; }
+}
+//////////////현재 상태///////////////////////////////////////
+public class State{
+    @SerializedName("id") String id;
+    @SerializedName("text") String text;
+
+    public String getId() { return id; }
+    public String getText() { return text; }
+}
+/////////////진행 상황////////////////////////////////////////
+public class Progress{
+    @SerializedName("time") String time;
+    @SerializedName("location") Location location;
+    @SerializedName("status") Status status;
+    @SerializedName("description") String description;
+
+    public String getTime() { return time; }
+    public String getDescription() { return description; }
+
+
+    public class Location{//위치-위치의 이름
+        @SerializedName("name") String name;
+
+        public String getName() { return name; }
+    }
+    public class Status{//상태-상태id와 상태(예)배송중
+        @SerializedName("id") String id;
+        @SerializedName("text") String text;
+
+        public String getId() { return id; }
+        public String getText() { return text; }
+    }
+
+    public Progress.Location getLocation() {return location;}
+    public Progress.Status getStatus() {return status;}
+
+}
+/////////////////////////////////////////////////////
+
+public From getFrom(){ return from;}
+public To getTo(){ return to;}
+public State getState() { return state; }
+public List<Progress> getProgress(){ return progress;}
+```
+
+
+
 ## Interface추가
 
-## Class추가(+@SerializedName)
+이제 인터페이스를 추가해줘야 합니다.
+
+Retriservice.java 라는 인터페이스를 추가해 줬습니다.
+
+```java
+//배송추적 값 가져오기
+@GET("/carriers/{track_id}/tracks/{track_number}")
+Call<Data> trackingData(@Path("track_id") String track_id, @Path("track_number") String track_number);
+//택배사 정보 가져오기
+@GET("/carriers")
+Call<List<Data>> getCarriers();
+```
+
+
+
+
 
 ## 원하는 값을 Call해서 가져오기
 
