@@ -23,11 +23,17 @@ AndroidManifest.xml 에서 아래를 앱속성을 다루기 전의 부분에 추
 
 
 
-사용하고자 하는 API는
+예시로 사용하고자 하는 API는
 
 https://tracker.delivery/guide/
 
 위 링크에 있는 것으로
+
+배송추적을 위한 값들이 나열 되어 있는 것이
+
+꽤나 복잡하여서 이것을 예시로 사용하여서
+
+다른 api들은 비교적 더 쉽게 사용이 가능할겁니다.
 
 
 
@@ -163,7 +169,7 @@ Call<Data> trackingData(@Path("track_id") String track_id, @Path("track_number")
 Call<List<Data>> getCarriers();
 ```
 
-
+일단 불러오기 위한 get과 path만을 사용하겠습니다.
 
 
 
