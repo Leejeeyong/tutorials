@@ -175,4 +175,22 @@ Call<List<Data>> getCarriers();
 
 ## 원하는 값을 Call해서 가져오기
 
+MainActivity에 아래와 같이 추가 해줍니다.
+
+baseurl은 인터페이스에서 전체url을 썼다면 필요없습니다.
+
+
+
+```java
+Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl("https://apis.tracker.delivery")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build();
+final Retroservice retroService = retrofit.create(Retroservice.class);
+```
+
+baseurl은 인터페이스에서 전체 url을 
+
+
+
 ## List로 가져오기(+Adapter)
