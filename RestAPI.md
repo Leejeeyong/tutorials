@@ -182,6 +182,10 @@ baseurl은 인터페이스에서 전체url을 썼다면 필요없습니다.
 
 
 ```java
+String carriername = "kr.epost"; //택배사 이름
+String tracknumberedit = "1111111111"; //송장번
+
+//retrofit service 
 Retrofit retrofit = new Retrofit.Builder()
         .baseUrl("https://apis.tracker.delivery")
         .addConverterFactory(GsonConverterFactory.create())
@@ -193,4 +197,29 @@ baseurl은 인터페이스에서 전체 url을
 
 
 
+그리고 Call해와야 하기 위해서
+
+기본적인 폼을 가져옵니다.
+
+
+
+```java
+Call<Data> dataP = retroService.trackingData(carriername, tracknumberedit);
+
+dataP.enqueue(new Callback<Data>() {
+  
+    @Override
+    public void onResponse(@NonNull Call<Data> call, @NonNull Response<Data> response) {
+        Data user = response.body();
+    }
+  
+    @Override
+    public void onFailure(@NonNull Call<Data> call, @NonNull Throwable t) {
+        Log.d("TESt", "Failure");
+    }
+  
+});
+```
+
 ## List로 가져오기(+Adapter)
+
